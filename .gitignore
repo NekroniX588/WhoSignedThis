@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+uploads/*
+!uploads/.gitkeep
+!signature_base/.gitkeep
+*.pkl
+*.faiss
+*.h5
+*.pth
+*.pt
+*.onnx
+
+# Logs
+*.log
+logs/
+
+# OS specific
+.DS_Store
+Thumbs.db 

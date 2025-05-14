@@ -11,7 +11,7 @@
             padding-top: 2rem;
         }
         .upload-container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             background: white;
             padding: 2rem;
@@ -43,6 +43,21 @@
             padding: 1rem;
             margin-bottom: 1rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .signature-image {
+            width: 150px;
+            height: 100px;
+            object-fit: contain;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 0.5rem;
+            background: white;
+        }
+        .signature-info {
+            flex-grow: 1;
         }
         .similarity-bar {
             height: 8px;
@@ -55,6 +70,15 @@
             background: #0d6efd;
             border-radius: 4px;
             transition: width 0.3s ease;
+        }
+        .celebrity-name {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .similarity-score {
+            color: #6c757d;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -133,12 +157,13 @@
                         const card = document.createElement('div');
                         card.className = 'signature-card';
                         card.innerHTML = `
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">${result.name}</h5>
-                                <span class="text-muted">${Math.round(result.similarity * 100)}% match</span>
-                            </div>
-                            <div class="similarity-bar">
-                                <div class="similarity-fill" style="width: ${result.similarity * 100}%"></div>
+                            <img src="${result.image_url}" alt="${result.name}'s signature" class="signature-image">
+                            <div class="signature-info">
+                                <div class="celebrity-name">${result.name}</div>
+                                <div class="similarity-score">${Math.round(result.similarity * 100)}% match</div>
+                                <div class="similarity-bar">
+                                    <div class="similarity-fill" style="width: ${result.similarity * 100}%"></div>
+                                </div>
                             </div>
                         `;
                         results.appendChild(card);
